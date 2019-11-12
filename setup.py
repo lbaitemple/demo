@@ -8,5 +8,7 @@ setup(
     license='',
     author='Li Bai',
     author_email='lbai@temple.edu',
-    description=''
+    description='',
+    install_requires=['torch', 'torch-vision'],
+    package_data={'data', ['*.txt']}
 )

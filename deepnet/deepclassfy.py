@@ -1,6 +1,7 @@
 from torchvision  import models
 import torch
 from PIL import Image
+import pkg_resources
 
 from torchvision import transforms
 
@@ -33,8 +34,9 @@ class LiNet():
 
         self.alexnet.eval()
         out = self.alexnet(batch_t)
-
-        with open('imagenet_classes.txt') as f:
+        labelfile = pkg_resources.resource_filename('deepnet',
+                                                    "imagenet_classes.txt")
+        with open(labelfile) as f:
             labels = [line.strip() for line in f.readlines()]
 
         _, index = torch.max(out, 1)
