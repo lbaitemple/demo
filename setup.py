@@ -10,5 +10,5 @@ setup(
     author_email='lbai@temple.edu',
     description='',
     install_requires=['torch', 'torch-vision'],
-    package_data={'data', ['*.txt']}
+    package_data={'data': ['*.txt']}
 )
